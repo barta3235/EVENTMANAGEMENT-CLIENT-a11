@@ -11,6 +11,7 @@
   },
   "dependencies": {
     "@react-icons/all-files": "^4.1.0",
+    "axios": "^1.6.8",
     "firebase": "^10.11.1",
     "localforage": "^1.10.0",
     "match-sorter": "^6.3.4",
@@ -20,7 +21,8 @@
     "react-router-dom": "^6.23.1",
     "react-tooltip": "^5.26.4",
     "sort-by": "^1.2.0",
-    "sweetalert2": "^11.11.0"
+    "sweetalert2": "^11.11.0",
+    "swiper": "^11.1.1"
   },
   "devDependencies": {
     "@types/react": "^18.2.66",
