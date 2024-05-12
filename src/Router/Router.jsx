@@ -7,6 +7,7 @@ import Login from "../pages/login/Login";
 import Register from "../pages/register/Register";
 import AddServices from "../pages/AddServices/AddServices";
 import EachHomeService from "../components/HomeService/EachHomeService";
+import BookNow from "../pages/bookNow/BookNow";
 
 const router = createBrowserRouter([
   {
@@ -34,6 +35,11 @@ const router = createBrowserRouter([
         {
           path:'/eachService/:id',
           element:<EachHomeService></EachHomeService>,
+          loader:({params})=> fetch(`http://localhost:5000/services/${params.id}`)
+        },
+        {
+          path:'/bookNow/:id',
+          element:<BookNow></BookNow>,
           loader:({params})=> fetch(`http://localhost:5000/services/${params.id}`)
         }
     ]

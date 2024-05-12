@@ -1,4 +1,4 @@
-import { useLoaderData } from "react-router-dom";
+import { Link, useLoaderData } from "react-router-dom";
 import { IoPerson } from "react-icons/io5";
 import { MdEmail } from "react-icons/md";
 import { IoLocation } from "react-icons/io5";
@@ -16,7 +16,7 @@ const EachHomeService = () => {
 
                     <div className="text-start">
                         <h1 className="mb-[30px] font-medium text-2xl">Service Provider Information</h1>
-                        <div className="text-start border-l border-black pl-4">
+                        <div className="text-start lg:border-l lg:border-black lg:pl-4">
                             <div className="avatar">
                                 <div className="w-24 rounded-full">
                                     <img src={userimage} />
@@ -24,19 +24,19 @@ const EachHomeService = () => {
                             </div>
                             <div className="flex gap-1 items-center text-[20px] mt-[20px] mb-[10px]"><IoPerson></IoPerson><h1>{name}</h1></div>
                             <div className="flex gap-1 items-center text-[20px] mb-[15px]"><MdEmail></MdEmail><h1>{email}</h1></div>
-                            <div className="flex gap-1 items-center text-[18px] font-medium text-[#7f1734]"><IoLocation></IoLocation><h1><span className="font-medium">Service Area:</span> {servicearea}</h1></div>
+                            <div className="flex gap-1 items-center text-[18px] font-medium text-[#7f1734]"><IoLocation></IoLocation><h1><span className="font-medium">Service Area - </span> {servicearea}</h1></div>
                         </div>
-                        <div className="mt-[100px]">
-                            <button className="p-1 font-medium bg-[#7f1734] rounded-md text-white">Book Now</button>
+                        <div className="mt-[50px]">
+                            <Link to={`/bookNow/${_id}`}><button className="p-1 font-medium bg-[#7f1734] rounded-md text-white">Book Now</button></Link>
                         </div>
                     </div>
 
 
                     <div className="md:w-1/2 text-start">
                         <h1 className="mb-[30px] font-medium text-2xl">Service Information</h1>
-                        <div className="border-l border-black pl-4">
+                        <div className="lg:border-l lg:border-black lg:pl-4">
                             <h1 className="flex gap-2 items-center text-[20px] mt-[20px] mb-[10px]"><BsCalendar4Event></BsCalendar4Event>{servicename}</h1>
-                            <h1 className="flex gap-2 items-center text-[20px] mb-[15px]"><RiMoneyPoundCircleLine></RiMoneyPoundCircleLine><h1>Price: {price}</h1></h1>
+                            <h1 className="flex gap-2 items-center text-[20px] mb-[15px] font-semibold"><RiMoneyPoundCircleLine></RiMoneyPoundCircleLine><h1>Price: {price}</h1></h1>
                             <h1 className="text-justify text-sm">{description}</h1>
                         </div>
                     </div>
