@@ -21,7 +21,7 @@ const Navbar = () => {
 
     const navlinks = <>
         <li><Link to='/' className='border-0 border-collapse bg-white mr-3 text-[22px] font-medium hover:border-b-4 hover:bg-white rounded-none hover:border-b-[#7f1734]'>Home</Link></li>
-        <li><Link className=' bg-white mr-3 text-[22px] font-medium hover:border-b-4 hover:bg-white rounded-none hover:border-b-[#7f1734]'>Services</Link></li>
+        <li><Link to='/allServices' className=' bg-white mr-3 text-[22px] font-medium hover:border-b-4 hover:bg-white rounded-none hover:border-b-[#7f1734]'>Services</Link></li>
         <li className="mr-4">
             <details className="dropdown dropdown-hover">
                 <summary className="text-[22px] font-semibold text-[#7f1734] hover:text-white hover:bg-[#7f1734]">Dashboard</summary>
