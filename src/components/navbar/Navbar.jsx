@@ -31,6 +31,7 @@ const Navbar = () => {
                     <li><Link className=' bg-white text-[20px] font-medium hover:border-b-4 hover:bg-white rounded-none hover:border-b-[#7f1734] py-3' to='/manageService'>Manage Service</Link></li>
                     <li><Link className=' bg-white text-[20px] font-medium hover:border-b-4 hover:bg-white rounded-none hover:border-b-[#7f1734] py-3' to='/bookedServices'>Booked-Services</Link></li>
                     <li><Link className=' bg-white text-[20px] font-medium hover:border-b-4 hover:bg-white rounded-none hover:border-b-[#7f1734] py-3' to='/servicesTodo'>Service-To-Do</Link></li>
+                    <li><Link className=' bg-white text-[20px] font-medium hover:border-b-4 hover:bg-white rounded-none hover:border-b-[#7f1734] py-3' to='/feedback'>Feedback</Link></li>
                 </ul>
             </details>
         </li>
@@ -60,6 +61,7 @@ const Navbar = () => {
                                     <li><Link className=' bg-white text-[20px] font-medium hover:border-b-4 hover:bg-white rounded-none hover:border-b-[#7f1734] py-3' to='/manageService'>Manage Service</Link></li>
                                     <li><Link className=' bg-white text-[20px] font-medium hover:border-b-4 hover:bg-white rounded-none hover:border-b-[#7f1734] py-3' to='/bookedServices'>Booked-Services</Link></li>
                                     <li><Link className=' bg-white text-[20px] font-medium hover:border-b-4 hover:bg-white rounded-none hover:border-b-[#7f1734] py-3' to='/servicesTodo'>Service-To-Do</Link></li>
+                                    <li><Link className=' bg-white text-[20px] font-medium hover:border-b-4 hover:bg-white rounded-none hover:border-b-[#7f1734] py-3' to='/feedback'>Feedback</Link></li>
                                 </ul>
                             </details>
                         </li>

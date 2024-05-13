@@ -3,6 +3,7 @@ import Banner from "../../components/banner/Banner";
 import HomeService from "../../components/HomeService/HomeService";
 import Gallery from "../../components/gallery/Gallery";
 import { Helmet } from "react-helmet-async";
+import Review from "../../components/review/Review";
 
 const Home = () => {
     
@@ -24,6 +25,8 @@ const Home = () => {
          <div className="flex justify-end mt-[20px] mx-[5px] md:mx-[10px]">
              <Link to='allServices'><button className="py-2 bg-[#7f1734] w-[120px] text-white rounded-md rounded-l-md text-[18px] font-medium px-3 mr-[40px]">Show All</button></Link>
          </div>
+
+         <Review></Review>
 
 
         </div>

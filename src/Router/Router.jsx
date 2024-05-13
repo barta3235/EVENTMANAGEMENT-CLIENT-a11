@@ -14,6 +14,7 @@ import ProtectedRoute from "./ProtectedRoute";
 import UpdateService from "../pages/manageService/UpdateService";
 import BookedServices from "../pages/bookedServices/BookedServices";
 import ErrorPage from "../pages/bookNow/errorPage/ErrorPage";
+import Feedback from "../pages/feedback/Feedback";
 
 const router = createBrowserRouter([
   {
@@ -65,6 +66,11 @@ const router = createBrowserRouter([
         {
           path:'/bookedServices',
           element:<ProtectedRoute><BookedServices></BookedServices></ProtectedRoute>
+        },
+        {
+          path:'/feedback',
+          element:<ProtectedRoute><Feedback></Feedback></ProtectedRoute>,
+          loader:()=> fetch('http://localhost:5000/message')
         }
     ]
   },
