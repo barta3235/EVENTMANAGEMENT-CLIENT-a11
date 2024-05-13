@@ -11,6 +11,7 @@ import BookNow from "../pages/bookNow/BookNow";
 import AllServices from "../pages/allservices/AllServices";
 import ManageServiceMain from "../pages/manageService/ManageServiceMain";
 import ProtectedRoute from "./ProtectedRoute";
+import UpdateService from "../pages/manageService/UpdateService";
 
 const router = createBrowserRouter([
   {
@@ -53,6 +54,11 @@ const router = createBrowserRouter([
         {
           path:'/manageService',
           element:<ProtectedRoute><ManageServiceMain></ManageServiceMain></ProtectedRoute>
+        },
+        {
+          path:'/updateService/:id',
+          element:<UpdateService></UpdateService>,
+          loader:({params})=> fetch(`http://localhost:5000/services/${params.id}`)
         }
     ]
   },
