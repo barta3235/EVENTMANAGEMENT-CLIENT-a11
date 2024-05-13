@@ -1,5 +1,5 @@
 import { useContext } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../AuthProvider/AuthProvider";
 import Swal from "sweetalert2";
 
@@ -7,7 +7,8 @@ import Swal from "sweetalert2";
 const Login = () => {
 
     const { logInUser, logInUserGoogle } = useContext(AuthContext)
-
+    const location=useLocation();
+    const nav=useNavigate();
 
     const handleSignIn = (e) => {
         e.preventDefault();
@@ -23,6 +24,7 @@ const Login = () => {
                     timer: 1500,
                     showConfirmButton: false,
                 });
+                nav(location.state? location.state:'/')
 
             })
             .catch((error) => {

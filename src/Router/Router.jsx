@@ -9,6 +9,8 @@ import AddServices from "../pages/AddServices/AddServices";
 import EachHomeService from "../components/HomeService/EachHomeService";
 import BookNow from "../pages/bookNow/BookNow";
 import AllServices from "../pages/allservices/AllServices";
+import ManageServiceMain from "../pages/manageService/ManageServiceMain";
+import ProtectedRoute from "./ProtectedRoute";
 
 const router = createBrowserRouter([
   {
@@ -31,22 +33,26 @@ const router = createBrowserRouter([
         },
         {
           path:'/addService',
-          element: <AddServices></AddServices>
+          element: <ProtectedRoute><AddServices></AddServices></ProtectedRoute>
         },
         {
           path:'/eachService/:id',
-          element:<EachHomeService></EachHomeService>,
+          element:<ProtectedRoute><EachHomeService></EachHomeService></ProtectedRoute>,
           loader:({params})=> fetch(`http://localhost:5000/services/${params.id}`)
         },
         {
           path:'/bookNow/:id',
-          element:<BookNow></BookNow>,
+          element:<ProtectedRoute><BookNow></BookNow></ProtectedRoute>,
           loader:({params})=> fetch(`http://localhost:5000/services/${params.id}`)
         },
         {
           path: '/allServices',
           element: <AllServices></AllServices>,
           loader:()=> fetch('http://localhost:5000/services')
+        },
+        {
+          path:'/manageService',
+          element:<ProtectedRoute><ManageServiceMain></ManageServiceMain></ProtectedRoute>
         }
     ]
   },

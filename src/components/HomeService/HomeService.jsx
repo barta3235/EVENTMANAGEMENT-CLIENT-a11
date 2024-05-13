@@ -22,7 +22,7 @@ const HomeService = ({ service }) => {
                     <div className="flex flex-col items-center justify-center p-8 rounded-b-lg bg-[#7f1734]">
                         <img src={userimage} alt="" className="w-16 h-16 mb-2 -mt-16 bg-center bg-cover rounded-full dark:bg-gray-500" />
                         <p className="text-xl font-semibold leading-tight text-white">{name}</p>
-                        <Link to={`/eachService/${_id}`}><button className="text-white mt-[20px] p-2 rounded-md bg-[#410C1B] ">View Details</button></Link>
+                        <Link to={`/eachService/${_id}`}><button className="text-white mt-[20px] p-2 rounded-md bg-[#410C1B] font-semibold">View Details</button></Link>
                     </div>
                 </div>
             </div>
