@@ -8,6 +8,7 @@ import Register from "../pages/register/Register";
 import AddServices from "../pages/AddServices/AddServices";
 import EachHomeService from "../components/HomeService/EachHomeService";
 import BookNow from "../pages/bookNow/BookNow";
+import AllServices from "../pages/allservices/AllServices";
 
 const router = createBrowserRouter([
   {
@@ -41,6 +42,11 @@ const router = createBrowserRouter([
           path:'/bookNow/:id',
           element:<BookNow></BookNow>,
           loader:({params})=> fetch(`http://localhost:5000/services/${params.id}`)
+        },
+        {
+          path: '/allServices',
+          element: <AllServices></AllServices>,
+          loader:()=> fetch('http://localhost:5000/services')
         }
     ]
   },
