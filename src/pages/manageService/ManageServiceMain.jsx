@@ -24,7 +24,7 @@ const ManageServiceMain = () => {
             <h1 className="mx-[7px] md:mx-[40px] mb-[20px] bg-[#7f1734] w-[100px] p-1 text-center rounded-full text-white font-medium">Services - {manageSet.length}</h1>
             <div className="mx-[7px] md:mx-[40px] flex flex-col gap-[50px]">
                 {
-                    manageSet.map((aManage) => <EachManage key={aManage._id} manage={aManage}></EachManage>)
+                    manageSet.map((aManage) => <EachManage key={aManage._id} allManage={manageSet} manage={aManage} setManage={SetManageSet}></EachManage>)
                 }
             </div>
         </div>
