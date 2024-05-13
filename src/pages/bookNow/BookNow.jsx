@@ -8,7 +8,7 @@ const BookNow = () => {
 
     const {user}=useContext(AuthContext);
     console.log(user)
-    const {servicearea,servicename,imageservice,name,email,price}= useLoaderData();
+    const {_id,servicearea,servicename,imageservice,name,email,price}= useLoaderData();
     const nav= useNavigate();
 
 
@@ -82,7 +82,7 @@ const BookNow = () => {
                         </div>
                         <div className="col-span-full sm:col-span-3 mt-5">
                             <label htmlFor="img" className="font-medium" >Service Id</label>
-                            <input id="img" defaultValue={imageservice} name="serviceid" type="text" placeholder="Image url for the service" className="w-full rounded-md border py-2 pl-1" disabled />
+                            <input id="img" defaultValue={_id} name="serviceid" type="text" placeholder="Image url for the service" className="w-full rounded-md border py-2 pl-1" disabled />
                         </div>
                         <br />
                         <div className="col-span-full sm:col-span-3 mt-5">
