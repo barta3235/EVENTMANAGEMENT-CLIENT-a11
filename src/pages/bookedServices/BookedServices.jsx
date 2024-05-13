@@ -3,6 +3,7 @@ import { AuthContext } from "../../AuthProvider/AuthProvider";
 import axios from "axios";
 import EachBooking from "./EachBooking";
 import { Link } from "react-router-dom";
+import { Helmet } from "react-helmet-async";
 
 
 const BookedServices = () => {
@@ -22,6 +23,9 @@ const BookedServices = () => {
 
     return (
         <div>
+            <Helmet>
+                <title>Booked Services</title>
+            </Helmet>
             <h1 className="mx-[7px] mt-[50px] md:mx-[40px] mb-[20px] bg-[#7f1734] w-[100px] p-1 text-center rounded-full text-white font-medium">Bookings - {bookingSet.length}</h1>
 
             {

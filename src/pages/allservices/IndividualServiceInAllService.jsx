@@ -10,6 +10,7 @@ const IndividualServiceInAllService = ({ service }) => {
     const description100 = description.slice(0, 100);
     return (
         <section className="my-8 dark:bg-gray-100 dark:text-gray-800">
+           
             <div className="container flex flex-col items-center justify-center  mx-auto lg:flex-row lg:flex-wrap lg:justify-evenly ">
                 <div className="flex flex-col  mx-4 my-6 shadow-xl">
                     <div className="px-4 py-12 rounded-t-lg  md:px-6 dark:bg-gray-50">

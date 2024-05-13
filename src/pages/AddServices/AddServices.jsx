@@ -2,6 +2,7 @@ import { useContext } from "react";
 import { AuthContext } from "../../AuthProvider/AuthProvider";
 import axios from "axios";
 import Swal from "sweetalert2";
+import { Helmet } from "react-helmet-async";
 
 const AddServices = () => {
 
@@ -41,6 +42,9 @@ const AddServices = () => {
 
     return (
         <section className="p-6 dark:bg-gray-100 dark:text-gray-900">
+            <Helmet>
+                <title>Add service</title>
+            </Helmet>
             <form onSubmit={handleAddService} noValidate="" action="" className="container flex flex-col mx-auto space-y-12">
                 <fieldset className="grid grid-cols-4 gap-6 p-6 rounded-md shadow-md dark:bg-gray-50">
                     <div className="space-y-2 col-span-full lg:col-span-1">

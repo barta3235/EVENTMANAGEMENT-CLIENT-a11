@@ -4,6 +4,7 @@ import { MdEmail } from "react-icons/md";
 import { IoLocation } from "react-icons/io5";
 import { BsCalendar4Event } from "react-icons/bs";
 import { RiMoneyPoundCircleLine } from "react-icons/ri";
+import { Helmet } from "react-helmet-async";
 
 const EachHomeService = () => {
 
@@ -11,6 +12,9 @@ const EachHomeService = () => {
 
     return (
         <section>
+            <Helmet>
+                <title>Detailed Service</title>
+            </Helmet>
             <div className="dark:bg-violet-600">
                 <div className="container flex md:flex-row flex-col gap-10 justify-between px-4 py-16 pb-24 mx-auto text-center lg:pb-56 md:py-32 md:px-10 lg:px-32 dark:text-gray-50 bg-slate-200">
 
