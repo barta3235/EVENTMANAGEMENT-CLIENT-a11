@@ -13,12 +13,13 @@ import ManageServiceMain from "../pages/manageService/ManageServiceMain";
 import ProtectedRoute from "./ProtectedRoute";
 import UpdateService from "../pages/manageService/UpdateService";
 import BookedServices from "../pages/bookedServices/BookedServices";
+import ErrorPage from "../pages/bookNow/errorPage/ErrorPage";
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <MainLayout></MainLayout>,
-    errorElement: <div><h1>Error page | Error page to be made</h1></div>,
+    errorElement: <ErrorPage></ErrorPage> ,
     children:[
         {
             path:'/',

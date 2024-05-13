@@ -85,4 +85,10 @@
     background-repeat: no-repeat;
     background-size: cover;
   }
+
+  .error-image{
+    background-image: url('https://i.postimg.cc/XJV6WH90/b4.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
   

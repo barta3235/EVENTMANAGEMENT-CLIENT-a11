@@ -1,12 +1,12 @@
 import { useContext } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../AuthProvider/AuthProvider";
 import Swal from "sweetalert2";
 
 const Register = () => {
 
-    const {createUser,addPhotoName}=useContext(AuthContext);
-
+    const {createUser,addPhotoName,logOutUser}=useContext(AuthContext);
+    const nav= useNavigate()
     const handleCreateUser=(e)=>{
         e.preventDefault()
         const form=e.target;
@@ -42,10 +42,17 @@ const Register = () => {
             .then(()=>{
                 Swal.fire({
                     icon: "success",
-                    text: "You have registered successfully",
+                    text: "You have registered successfully. Please Login!",
                     timer: 1500,
                     showConfirmButton: false,
                 });
+                logOutUser()
+                .then(()=>{
+                    nav('/login')
+                })
+                .catch(error=>{
+                    console.log(error.message)
+                })
             })
         })
         .catch((error)=>{

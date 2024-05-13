@@ -1,6 +1,6 @@
 import { Link, } from "react-router-dom";
 import { SiDreamstime } from "react-icons/si";
-import { useContext } from "react";
+import { useContext, useEffect } from "react";
 import { AuthContext } from "../../AuthProvider/AuthProvider";
 import { IoIosLogOut } from "react-icons/io";
 import { Tooltip } from 'react-tooltip'
@@ -8,6 +8,7 @@ import { Tooltip } from 'react-tooltip'
 const Navbar = () => {
 
     const { user, logOutUser } = useContext(AuthContext);
+
 
     const handleLogOut = () => {
         logOutUser()

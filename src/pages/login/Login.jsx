@@ -46,6 +46,7 @@ const Login = () => {
                     timer: 1500,
                     showConfirmButton: false,
                 });
+                nav(location.state? location.state:'/')
             })
             .catch((error) => {
                 Swal.fire({
