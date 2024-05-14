@@ -6,7 +6,7 @@ import { SlCalender } from "react-icons/sl";
 
 const EachBooking = ({ booking }) => {
 
-    const { _id,servicearea, servicename, imageservice, serviceid, price, providername, provideremail, useremail, username, date, instruction, serviceStatus } = booking;
+    const { _id,servicearea, servicename, imageservice, serviceid, price, providername, Provideremail, useremail, username, date, instruction, serviceStatus } = booking;
     
     return (
         <div className="flex flex-col p-3 md:p-6 space-y-4 sm:p-4 dark:bg-gray-50 dark:text-gray-800 border rounded-md shadow-md">
@@ -25,7 +25,7 @@ const EachBooking = ({ booking }) => {
                                         <p className="text-sm dark:text-gray-600 font-medium">Service Id - {serviceid}</p>
                                         <p className="text-sm dark:text-gray-600 font-medium">Price - ${price}</p>
                                         <h3 className="text-sm font-semibold leading-snug pt-[20px] flex items-center gap-1"><IoPerson></IoPerson>{providername}</h3>
-                                        <p className="text-sm dark:text-gray-600 flex items-center gap-1 font-medium"><HiOutlineMailOpen></HiOutlineMailOpen>{provideremail}</p>
+                                        <p className="text-sm dark:text-gray-600 flex items-center gap-1 font-medium"><HiOutlineMailOpen></HiOutlineMailOpen>{Provideremail}</p>
                                     </div>
 
                                 </div>

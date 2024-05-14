@@ -1,11 +1,19 @@
-import { useLoaderData } from "react-router-dom";
+import { useEffect, useState } from "react";
 import IndividualServiceInAllService from "./IndividualServiceInAllService";
 import { Helmet } from "react-helmet-async";
+import axios from "axios";
 
 
 const AllServices = () => {
 
-    const services = useLoaderData();
+    const [services,setServices]=useState([]);
+
+    useEffect(()=>{
+        axios.get(`http://localhost:5000/services`)
+        .then(data=>{
+            setServices(data.data);
+        })
+    },[])
 
 
     return (
@@ -18,6 +26,9 @@ const AllServices = () => {
                 {
                     services.map((service) => <IndividualServiceInAllService key={service._id} service={service}></IndividualServiceInAllService>)
                 }
+            </div>
+            <div>
+
             </div>
         </div>
     );
