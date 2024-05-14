@@ -11,7 +11,7 @@ const ManageServiceMain = () => {
     const [manageSet, SetManageSet] = useState([])
 
     useEffect(() => {
-        fetch(`http://localhost:5000/allServices/${user?.email}`)
+        fetch(`http://localhost:5000/allServices/${user?.email}`,{credentials:'include'})
             .then(res => res.json())
             .then(data => {
                 SetManageSet(data);

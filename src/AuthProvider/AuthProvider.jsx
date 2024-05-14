@@ -2,7 +2,6 @@ import { GoogleAuthProvider, createUserWithEmailAndPassword, signOut, signInWith
 import auth from '../firebase/firebase.config'
 import { createContext, useEffect, useState } from "react";
 import axios from "axios";
-import { data } from "autoprefixer";
 
 export const AuthContext = createContext();
 const googleProvider = new GoogleAuthProvider();
@@ -45,8 +44,8 @@ const AuthProvider = ({ children }) => {
                 const userEmail= currentUser?.email || user?.email;
                 const loggedEmail={email:userEmail};
                 axios.post('http://localhost:5000/jwt',loggedEmail,{withCredentials:true})
-                .then(()=>{
-                    console.log('TOken success')
+                .then((data)=>{
+                    console.log(data?.data?.success)
                 })
             }else{
                 setUser(null)
@@ -54,8 +53,8 @@ const AuthProvider = ({ children }) => {
                 const userEmail= currentUser?.email || user?.email;
                 const loggedEmail={email:userEmail};
                 axios.post('http://localhost:5000/logOutJwt',loggedEmail,{withCredentials:true})
-                .then(()=>{
-                    console.log(data.data.success)
+                .then((data)=>{
+                    console.log(data?.data?.success)
                 })
             }
             setLoading(false)

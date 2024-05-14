@@ -13,7 +13,7 @@ const BookedServices = () => {
 
 
     useEffect(() => {
-        axios.get(`http://localhost:5000/bookedServices/${user?.email}`)
+        axios.get(`http://localhost:5000/bookedServices/${user?.email}`,{withCredentials:true})
             .then((data) => {
                 SetBookingSet(data.data)
             })

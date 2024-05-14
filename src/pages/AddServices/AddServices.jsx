@@ -6,7 +6,7 @@ import { Helmet } from "react-helmet-async";
 
 const AddServices = () => {
 
-    const {user}=useContext(AuthContext)
+    const {user,logOutUser}=useContext(AuthContext)
 
     const handleAddService=(e)=>{
         e.preventDefault()
@@ -23,7 +23,7 @@ const AddServices = () => {
         const newService={servicearea,servicename,imageservice,description,name,email,userimage,price};
         console.log(newService);
 
-        axios.post('http://localhost:5000/services',newService)
+        axios.post('http://localhost:5000/services',newService,{withCredentials:true})
         .then(data=>{
             if(data.data.insertedId){
                 Swal.fire({
@@ -33,6 +33,12 @@ const AddServices = () => {
                     showConfirmButton: false,
                 });
             }
+        })
+        .catch(()=>{
+            logOutUser()
+            .then(()=>{
+                console.log('Done')
+            })
         })
         form.reset();
         
