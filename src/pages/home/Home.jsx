@@ -23,7 +23,7 @@ const Home = () => {
             }
          </div>
          <div className="flex justify-end mt-[20px] mx-[5px] md:mx-[10px]">
-             <Link to='allServices'><button className="py-2 bg-[#7f1734] w-[120px] text-white rounded-md rounded-l-md text-[18px] font-medium px-3 mr-[40px]">Show All</button></Link>
+             <Link to='allServices'><button className="py-2 bg-[#7f1734] w-[120px] text-white rounded-md rounded-l-md text-[18px] font-medium px-3 md:mr-[40px]">Show All</button></Link>
          </div>
 
          <Review></Review>

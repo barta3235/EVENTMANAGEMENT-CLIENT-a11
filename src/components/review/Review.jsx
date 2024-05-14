@@ -50,6 +50,10 @@ const Review = () => {
                     <input id="email" name="email" type="email" defaultValue={user ? user?.email : ''} className="border w-full p-3 rounded dark:bg-[#7f1734]" />
                 </div>
                 <div>
+                    <label className="font-medium">Rating</label>
+                    <input id="email" name="rating" type="email" placeholder="Out of 5 Stars" className="border w-full p-3 rounded dark:bg-[#7f1734]" />
+                </div>
+                <div>
                     <label htmlFor="message" className="font-medium">Message</label>
                     <textarea id="message" name="message" rows="3" className="border w-full p-3 rounded dark:bg-gray-100"></textarea>
                 </div>
