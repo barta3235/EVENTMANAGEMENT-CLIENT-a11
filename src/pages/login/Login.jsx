@@ -50,7 +50,7 @@ const Login = () => {
             })
             .catch((error) => {
                 Swal.fire({
-                    icon: "success",
+                    icon: "error",
                     text: `${error.message}`,
                     timer: 1500,
                     showConfirmButton: false,

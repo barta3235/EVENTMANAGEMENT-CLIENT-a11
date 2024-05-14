@@ -3,6 +3,7 @@ import { AuthContext } from "../../AuthProvider/AuthProvider";
 import EachManage from "./EachManage";
 import { Link } from "react-router-dom";
 import { Helmet } from "react-helmet-async";
+import axios from "axios";
 
 const ManageServiceMain = () => {
 
@@ -11,11 +12,10 @@ const ManageServiceMain = () => {
     const [manageSet, SetManageSet] = useState([])
 
     useEffect(() => {
-        fetch(`http://localhost:5000/allServices/${user?.email}`,{credentials:'include'})
-            .then(res => res.json())
-            .then(data => {
-                SetManageSet(data);
-            })
+        axios.get(`http://localhost:5000/allServices/${user?.email}`)
+        .then(data=>{
+            SetManageSet(data.data)
+        })
     }, [user?.email])
 
 

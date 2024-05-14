@@ -23,7 +23,7 @@ const AddServices = () => {
         const newService={servicearea,servicename,imageservice,description,name,email,userimage,price};
         console.log(newService);
 
-        axios.post('http://localhost:5000/services',newService,{withCredentials:true})
+        axios.post('http://localhost:5000/services',newService)
         .then(data=>{
             if(data.data.insertedId){
                 Swal.fire({
@@ -33,12 +33,6 @@ const AddServices = () => {
                     showConfirmButton: false,
                 });
             }
-        })
-        .catch(()=>{
-            logOutUser()
-            .then(()=>{
-                console.log('Done')
-            })
         })
         form.reset();
         

@@ -15,6 +15,7 @@ import UpdateService from "../pages/manageService/UpdateService";
 import BookedServices from "../pages/bookedServices/BookedServices";
 import ErrorPage from "../pages/bookNow/errorPage/ErrorPage";
 import Feedback from "../pages/feedback/Feedback";
+import ServiceTodo from '../pages/serviceTodo/ServiceTodo'
 
 const router = createBrowserRouter([
   {
@@ -71,6 +72,10 @@ const router = createBrowserRouter([
           path:'/feedback',
           element:<ProtectedRoute><Feedback></Feedback></ProtectedRoute>,
           loader:()=> fetch('http://localhost:5000/message')
+        },
+        {
+          path:'/servicesTodo',
+          element:<ServiceTodo></ServiceTodo>,
         }
     ]
   },
