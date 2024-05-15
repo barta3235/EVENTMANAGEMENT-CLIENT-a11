@@ -2,30 +2,23 @@ import { useEffect, useState } from "react";
 import IndividualServiceInAllService from "./IndividualServiceInAllService";
 import { Helmet } from "react-helmet-async";
 import axios from "axios";
-import { useLoaderData } from "react-router-dom";
 
 
 const AllServices = () => {
 
     const [services, setServices] = useState([]);
     const [currentPage, setCurrentPage] = useState(1);
-    const [filter, setFilter] = useState('');
     const [itemsPerPage, setItemsPerPage] = useState(6);
     const [count, setCount] = useState(0)
-    // const data = useLoaderData();
-    // console.log(data.count);
-
-    // useEffect(() => {
-    //     setCount(data.count)
-    // }, [data.count])
+    const [search,setSearch]=useState('');
 
     useEffect(() => {
-        fetch(`http://localhost:5000/services-count?filter=${filter}`)
+        fetch(`http://localhost:5000/services-count`)
             .then(res => res.json())
             .then(data => {
                 setCount(data.count)
             })
-    }, [filter])
+    },)
 
 
     const numberOfPages = Math.ceil(count / itemsPerPage);
@@ -43,11 +36,11 @@ const AllServices = () => {
 
 
     useEffect(() => {
-        axios.get(`http://localhost:5000/filteredServices?page=${currentPage}&size=${itemsPerPage}&filter=${filter}`)
+        axios.get(`http://localhost:5000/filteredServices?page=${currentPage}&size=${itemsPerPage}&search=${search}`)
             .then(data => {
                 setServices(data.data);
             })
-    }, [currentPage, itemsPerPage, filter])
+    }, [currentPage, itemsPerPage,search])
 
     const handleItemsPerPage = (e) => {
         const val = e.target.value;
@@ -55,30 +48,23 @@ const AllServices = () => {
         setCurrentPage(1)
     }
 
+    const handleSearch=(e)=>{
+        e.preventDefault();
+        const text=e.target.search.value;
+        setSearch(text)
+    }
+
     return (
         <div className="mt-[50px]">
             <Helmet>
                 <title>Services</title>
             </Helmet>
-            <div className="flex justify-center items-center gap-5">
-                <div>
-                    <div className="flex items-center bg-slate-200 p-1 rounded-lg">
-                        <h1 className="font-medium w-[90px] text-[17px]">Filter By</h1>
-                        <select
-                            onChange={e => setFilter(e.target.value)}
-                            className="pl-1 border w-full rounded-md py-2 hover:bg-slate-200" name="servicename" id="lang">
-                            <option value="">Show All Category</option>
-                            <option value="Live-Music-Events">Live Music Events</option>
-                            <option value="Birthdays">Birthdays</option>
-                            <option value="Experiential-Marketing-Events">Experiential Marketing Events</option>
-                            <option value="Weddings">Weddings</option>
-                            <option value="Trade-Show-and-Expos">Trade Show and Expos</option>
-                        </select>
-                    </div>
-                </div>
-                <div>
-                    B
-                </div>
+            <div className="flex justify-center items-center">
+                <form onSubmit={handleSearch} action="">
+                    <input name="search" placeholder="Filter By Service Name" className="p-2 outline-none" type="text" />
+                    <button> <input type="submit" value="Search" className="p-2 bg-[#7f1734] text-white font-medium" /></button>
+                </form>
+              
             </div>
             <div className="grid grid-cols-1 md:grid-cols-3">
 
