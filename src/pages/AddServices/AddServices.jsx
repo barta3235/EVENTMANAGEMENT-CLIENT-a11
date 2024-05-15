@@ -6,7 +6,7 @@ import { Helmet } from "react-helmet-async";
 
 const AddServices = () => {
 
-    const {user,logOutUser}=useContext(AuthContext)
+    const {user}=useContext(AuthContext)
 
     const handleAddService=(e)=>{
         e.preventDefault()
