@@ -26,6 +26,7 @@ const ManageServiceMain = () => {
             <Helmet>
                 <title>Manage Services</title>
             </Helmet>
+            <h1 className=" mx-[7px] mb-[25px] font-semibold text-2xl md:mx-[40px]">Manage Services</h1>
             <h1 className="mx-[7px] md:mx-[40px] mb-[20px] bg-[#7f1734] w-[100px] p-1 text-center rounded-full text-white font-medium">Services - {manageSet.length}</h1>
             {
                 manageSet?.length > 0 ? <div className="mx-[7px] md:mx-[40px] flex flex-col gap-[50px]">

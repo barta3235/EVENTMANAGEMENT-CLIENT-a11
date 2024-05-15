@@ -26,6 +26,7 @@ const BookedServices = () => {
             <Helmet>
                 <title>Booked Services</title>
             </Helmet>
+            <h1 className=" mx-[7px] mt-[20px] font-semibold text-2xl md:mx-[40px]">Booked Services</h1>
             <h1 className="mx-[7px] mt-[50px] md:mx-[40px] mb-[20px] bg-[#7f1734] w-[100px] p-1 text-center rounded-full text-white font-medium">Bookings - {bookingSet.length}</h1>
 
             {

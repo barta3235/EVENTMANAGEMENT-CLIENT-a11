@@ -20,6 +20,7 @@ const ServiceTodo = () => {
 
     return (
         <div>
+              <h1 className="mx-[5px] md:mx-[15px] mt-[20px] mb-[30px] font-semibold text-2xl ">Registered Services</h1>
             <div>
                 {
                     bookedDatas.length > 0 ? bookedDatas.map((eachData) => <EachServiceToDo key={eachData._id} service={eachData} setService={setBookedDatas}></EachServiceToDo>) : <div className="mx-[7px] mt-[30px] md:mx-[40px] other h-[500px] flex flex-col md:flex-row justify-end pb-14 md:pb-0 md:justify-around gap-4 items-center p-2 md:p-5">

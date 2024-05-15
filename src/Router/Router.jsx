@@ -74,7 +74,7 @@ const router = createBrowserRouter([
         },
         {
           path:'/servicesTodo',
-          element:<ServiceTodo></ServiceTodo>,
+          element:<ProtectedRoute><ServiceTodo></ServiceTodo></ProtectedRoute>,
         }
     ]
   },
