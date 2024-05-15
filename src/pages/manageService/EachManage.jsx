@@ -1,9 +1,16 @@
 import axios from "axios";
+import { useEffect } from "react";
 import { FaRegEdit } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import Swal from "sweetalert2";
+import AOS from 'aos'
+import 'aos/dist/aos.css'
 
 const EachManage = ({ manage, setManage, allManage }) => {
+
+    useEffect(() => {
+        AOS.init({ duration: 1000 })
+    }, [])
 
     const { _id, servicearea, servicename, imageservice, name, email, price, userimage } = manage;
 
@@ -58,14 +65,14 @@ const EachManage = ({ manage, setManage, allManage }) => {
                     <h1><span className="font-medium">Price -</span> $ {price}</h1>
                 </div>
                 <div className="w-[150px] flex items-center">
-                    <img className="w-full rounded-md" src={imageservice} alt="" />
+                    <img  className="w-full rounded-md" src={imageservice} alt="" />
                 </div>
                 <div>
                     <h1 className="font-semibold mb-[10px] text-[18px]"># Service Provider</h1>
                     <h1 className="font-medium"><span className="font-medium">Name -</span> {name}</h1>
                     <h1><span className="font-medium">Email -</span> {email}</h1>
                 </div>
-                <div className="w-[150px] flex items-center">
+                <div data-aos="flip-up" className="w-[150px] flex items-center">
                     <img className="w-[100px]h-[100px] rounded-md" src={userimage} alt="" />
                 </div>
             </div>

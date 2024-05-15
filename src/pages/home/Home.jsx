@@ -34,7 +34,7 @@ const Home = () => {
             </div>
 
 
-            <div className="mb-[25px] mt-[20px] text-[#7f1734]">
+            <div className="mb-[25px] mt-[20px] text-white menu-edits mx-[5px] md:mx-[40px]">
                 <section className="p-6 dark:bg-gray-100 dark:text-gray-800">
                     <div className="container mx-auto grid justify-center grid-cols-2 text-center lg:grid-cols-3">
                         <div data-aos="zoom-in-up" className="flex flex-col justify-start m-2 lg:m-6 ">

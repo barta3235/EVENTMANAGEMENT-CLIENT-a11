@@ -16,8 +16,8 @@ const HomeService = ({ service }) => {
 
     return (
         <section data-aos="zoom-in-up" className="my-8 dark:bg-gray-100 dark:text-gray-800">
-            <div className="container flex flex-col items-center justify-center  mx-auto lg:flex-row lg:flex-wrap lg:justify-evenly lg:px-6">
-                <div className="flex flex-col  mx-4 my-6 shadow-xl">
+            <div className="container flex flex-col items-center justify-center  mx-auto lg:flex-row lg:flex-wrap lg:justify-evenly lg:px-6 ">
+                <div className="flex flex-col  mx-4 my-6 shadow-xl hover:bg-[#7f1734] hover:bg-opacity-10">
                     <div className="px-4 py-12 rounded-t-lg  lg:px-12 dark:bg-gray-50">
                         <img className="w-full md:h-[350px]" src={imageservice} alt="" />
                         <div>
