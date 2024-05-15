@@ -2,15 +2,22 @@ import { SiDreamstime } from "react-icons/si";
 import { Link } from "react-router-dom";
 import { FaSquareFacebook } from "react-icons/fa6";
 import { BsLinkedin } from "react-icons/bs";
+import AOS from 'aos'
+import 'aos/dist/aos.css'
+import { useEffect } from "react";
 
 const Footer = () => {
+    useEffect(() => {
+        AOS.init({ duration: 1000 })
+    }, [])
+
     return (
         <footer className="py-6 bg-[#7f1734] mt-[50px]">
             <div className="container px-6 mx-auto space-y-6 divide-y dark:divide-gray-600 md:space-y-12 divide-opacity-50">
                 <div className="grid grid-cols-12">
                     <div className="pb-6 col-span-full md:pb-0 md:col-span-6">
                         <a rel="noopener noreferrer" href="#" className="flex justify-center space-x-3 md:justify-start">
-                            <h1 className="flex items-center gap-2"><SiDreamstime className="text-[40px] text-white"></SiDreamstime><span className="self-center text-[38px] text-white font-bold">Dreamscape</span></h1>
+                            <h1 className="flex items-center gap-2"><h1 data-aos="fade-right"><SiDreamstime className="text-[40px] text-white"></SiDreamstime></h1><span data-aos="fade-down" className="self-center text-[38px] text-white font-bold">Dreamscape</span></h1>
                         </a>
                     </div>
                     <div className="col-span-6 md:text-left md:col-span-3 text-start mt-[15px] text-white font-medium">

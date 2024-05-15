@@ -1,10 +1,15 @@
-import { useContext } from "react";
+import { useContext, useEffect } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../AuthProvider/AuthProvider";
 import Swal from "sweetalert2";
+import AOS from 'aos'
+import 'aos/dist/aos.css'
 
 
 const Login = () => {
+    useEffect(() => {
+        AOS.init({ duration: 1000 })
+    }, [])
 
     const { logInUser, logInUserGoogle } = useContext(AuthContext)
     const location=useLocation();
@@ -61,7 +66,8 @@ const Login = () => {
 
 
     return (
-        <div className="flex justify-center my-[80px]">
+        <div data-aos="fade-up"
+        data-aos-anchor-placement="top-center" className="flex justify-center my-[80px]">
             <div className="w-full max-w-md p-4 rounded-md shadow-md sm:p-8 m-[7px] lg:m-0 dark:bg-gray-50 dark:text-gray-800 ">
                 <h2 className="mb-5 text-3xl font-semibold text-center">Login to your account</h2>
                 <p className="text-sm text-center dark:text-gray-600 text-[16px] font-medium">Dont have account?

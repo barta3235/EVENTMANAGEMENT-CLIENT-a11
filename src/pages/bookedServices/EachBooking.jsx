@@ -3,8 +3,14 @@ import { HiOutlineMailOpen } from "react-icons/hi";
 import { IoPerson } from "react-icons/io5";
 import { MdOutlineEmail } from "react-icons/md";
 import { SlCalender } from "react-icons/sl";
+import AOS from 'aos'
+import 'aos/dist/aos.css'
+import { useEffect } from "react";
 
 const EachBooking = ({ booking }) => {
+    useEffect(() => {
+        AOS.init({ duration: 1000 })
+    }, [])
 
     const { _id,servicearea, servicename, imageservice, serviceid, price, providername, Provideremail, useremail, username, date, instruction, serviceStatus } = booking;
     
@@ -14,7 +20,7 @@ const EachBooking = ({ booking }) => {
                 <li className="flex flex-col sm:flex-row sm:justify-between">
                     <div className="flex flex-col md:flex-row w-full md:space-x-4">
                         <div className="w-[280px] h-[164px]">
-                            <img className="flex-shrink-0 object-cover w-full h-full  dark:bg-gray-500" src={imageservice} alt="Polaroid camera" />
+                            <img data-aos="zoom-in" className="flex-shrink-0 object-cover w-full h-full  dark:bg-gray-500" src={imageservice} alt="Polaroid camera" />
                         </div>
                         <div className="flex flex-col justify-between w-full pb-4">
                             <div className="flex flex-col md:flex-row justify-between w-full pb-2 md:space-x-2">

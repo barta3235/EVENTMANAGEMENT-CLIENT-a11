@@ -1,9 +1,14 @@
 import axios from "axios";
-import { useContext } from "react";
+import { useContext, useEffect } from "react";
 import Swal from "sweetalert2";
+import AOS from 'aos'
+import 'aos/dist/aos.css'
 import { AuthContext } from "../../AuthProvider/AuthProvider";
 
 const Review = () => {
+    useEffect(() => {
+        AOS.init({ duration: 1000 })
+    }, [])
 
     const {user}=useContext(AuthContext);
 
@@ -38,7 +43,7 @@ const Review = () => {
                     <h2 className="text-4xl font-bold leading-tight lg:text-5xl">How was our service?</h2>
                     <div className="dark:text-gray-600 text-[18px] font-medium">Help us redefine what's already the best!</div>
                 </div>
-                <img src='https://i.postimg.cc/KcknFL67/ggg.jpg' alt="" className="rounded-full w-[600px]" />
+                <img data-aos="fade-right" src='https://i.postimg.cc/KcknFL67/ggg.jpg' alt="" className="rounded-full w-[600px]" />
             </div>
             <form onSubmit={handleSubmit} noValidate="" className="space-y-6">
                 <div>

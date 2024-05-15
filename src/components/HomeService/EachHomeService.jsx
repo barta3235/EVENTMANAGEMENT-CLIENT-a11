@@ -5,8 +5,14 @@ import { IoLocation } from "react-icons/io5";
 import { BsCalendar4Event } from "react-icons/bs";
 import { RiMoneyPoundCircleLine } from "react-icons/ri";
 import { Helmet } from "react-helmet-async";
+import { useEffect } from "react";
+import AOS from 'aos'
+import 'aos/dist/aos.css'
 
 const EachHomeService = () => {
+    useEffect(() => {
+        AOS.init({ duration: 1000 })
+    }, [])
 
     const { _id, servicearea, servicename, imageservice, description, name, email, userimage, price } = useLoaderData();
 
@@ -23,7 +29,7 @@ const EachHomeService = () => {
                         <div className="text-start lg:border-l lg:border-black lg:pl-4">
                             <div className="avatar">
                                 <div className="w-24 rounded-full">
-                                    <img src={userimage} />
+                                    <img data-aos="zoom-in" src={userimage} />
                                 </div>
                             </div>
                             <div className="flex gap-1 items-center text-[20px] mt-[20px] mb-[10px]"><IoPerson></IoPerson><h1>{name}</h1></div>
@@ -40,7 +46,7 @@ const EachHomeService = () => {
                         <h1 className="mb-[30px] font-medium text-2xl">Service Information</h1>
                         <div className="lg:border-l lg:border-black lg:pl-4">
                             <h1 className="flex gap-2 items-center text-[20px] mt-[20px] mb-[10px]"><BsCalendar4Event></BsCalendar4Event>{servicename}</h1>
-                            <h1 className="flex gap-2 items-center text-[20px] mb-[15px] font-semibold"><RiMoneyPoundCircleLine></RiMoneyPoundCircleLine><h1>Price: {price}</h1></h1>
+                            <h1 data-aos="zoom-in-up" className="flex gap-2 items-center text-[20px] mb-[15px] font-semibold"><RiMoneyPoundCircleLine></RiMoneyPoundCircleLine><h1>Price: {price}</h1></h1>
                             <h1 className="text-justify text-sm">{description}</h1>
                         </div>
                     </div>

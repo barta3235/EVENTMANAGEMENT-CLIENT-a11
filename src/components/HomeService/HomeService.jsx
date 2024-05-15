@@ -2,13 +2,20 @@ import { Link } from "react-router-dom";
 import { MdEventNote } from "react-icons/md";
 import { RiMoneyDollarCircleLine } from "react-icons/ri";
 import { CgDetailsMore } from "react-icons/cg";
+import AOS from 'aos'
+import 'aos/dist/aos.css'
+import { useEffect } from "react";
+
 const HomeService = ({ service }) => {
+    useEffect(() => {
+        AOS.init({ duration: 1000 })
+    }, [])
 
     const { _id, servicename, imageservice, description, name, userimage, price } = service
     const description100 = description.slice(0, 100);
 
     return (
-        <section className="my-8 dark:bg-gray-100 dark:text-gray-800">
+        <section data-aos="zoom-in-up" className="my-8 dark:bg-gray-100 dark:text-gray-800">
             <div className="container flex flex-col items-center justify-center  mx-auto lg:flex-row lg:flex-wrap lg:justify-evenly lg:px-6">
                 <div className="flex flex-col  mx-4 my-6 shadow-xl">
                     <div className="px-4 py-12 rounded-t-lg  lg:px-12 dark:bg-gray-50">
