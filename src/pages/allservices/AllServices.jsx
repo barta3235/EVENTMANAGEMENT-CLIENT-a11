@@ -8,16 +8,24 @@ import { useLoaderData } from "react-router-dom";
 const AllServices = () => {
 
     const [services, setServices] = useState([]);
-    const [currentPage, setCurrentPage] = useState(1)
+    const [currentPage, setCurrentPage] = useState(1);
+    const [filter, setFilter] = useState('');
     const [itemsPerPage, setItemsPerPage] = useState(6);
     const [count, setCount] = useState(0)
-    const data = useLoaderData();
-    console.log(data.count);
+    // const data = useLoaderData();
+    // console.log(data.count);
+
+    // useEffect(() => {
+    //     setCount(data.count)
+    // }, [data.count])
 
     useEffect(() => {
-        setCount(data.count)
-    }, [data.count])
-
+        fetch(`http://localhost:5000/services-count?filter=${filter}`)
+            .then(res => res.json())
+            .then(data => {
+                setCount(data.count)
+            })
+    }, [filter])
 
 
     const numberOfPages = Math.ceil(count / itemsPerPage);
@@ -33,24 +41,45 @@ const AllServices = () => {
     console.log(currentPage)
 
 
+
     useEffect(() => {
-        axios.get(`http://localhost:5000/filteredServices?page=${currentPage}&size=${itemsPerPage}`)
+        axios.get(`http://localhost:5000/filteredServices?page=${currentPage}&size=${itemsPerPage}&filter=${filter}`)
             .then(data => {
                 setServices(data.data);
             })
-    }, [currentPage, itemsPerPage])
+    }, [currentPage, itemsPerPage, filter])
 
-    const handleItemsPerPage=(e)=>{
-        const val= e.target.value;
+    const handleItemsPerPage = (e) => {
+        const val = e.target.value;
         setItemsPerPage(val);
         setCurrentPage(1)
     }
 
     return (
-        <div>
+        <div className="mt-[50px]">
             <Helmet>
                 <title>Services</title>
             </Helmet>
+            <div className="flex justify-center items-center gap-5">
+                <div>
+                    <div className="flex items-center bg-slate-200 p-1 rounded-lg">
+                        <h1 className="font-medium w-[90px] text-[17px]">Filter By</h1>
+                        <select
+                            onChange={e => setFilter(e.target.value)}
+                            className="pl-1 border w-full rounded-md py-2 hover:bg-slate-200" name="servicename" id="lang">
+                            <option value="">Show All Category</option>
+                            <option value="Live-Music-Events">Live Music Events</option>
+                            <option value="Birthdays">Birthdays</option>
+                            <option value="Experiential-Marketing-Events">Experiential Marketing Events</option>
+                            <option value="Weddings">Weddings</option>
+                            <option value="Trade-Show-and-Expos">Trade Show and Expos</option>
+                        </select>
+                    </div>
+                </div>
+                <div>
+                    B
+                </div>
+            </div>
             <div className="grid grid-cols-1 md:grid-cols-3">
 
                 {
@@ -73,7 +102,7 @@ const AllServices = () => {
                         <option value="6">6</option>
                         <option value="9">9</option>
                         <option value="12">12</option>
-                        <option value="">All</option>
+                        <option value="15">15</option>
                     </select>
                 </div>
             </div>

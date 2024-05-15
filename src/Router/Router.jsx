@@ -53,7 +53,6 @@ const router = createBrowserRouter([
         {
           path: '/allServices',
           element: <AllServices></AllServices>,
-          loader:()=>fetch('http://localhost:5000/services-count')
         },
         {
           path:'/manageService',
