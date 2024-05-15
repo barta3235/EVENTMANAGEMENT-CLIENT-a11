@@ -22,14 +22,14 @@ const BookNow = () => {
         const serviceid = form.serviceid.value
         const price = form.price.value;
         const providername = form.name.value;
-        const provideremail = form.email.value;
+        const Provideremail = form.email.value;
         const username = form.uname.value;
         const useremail = form.uemail.value;
         const date = form.std.value;
         const instruction = form.sins.value;
         const serviceStatus = "pending";
 
-        const newBooking = { servicearea, servicename, imageservice, serviceid, price, providername, provideremail, useremail, username, date, instruction, serviceStatus }
+        const newBooking = { servicearea, servicename, imageservice, serviceid, price, providername, Provideremail, useremail, username, date, instruction, serviceStatus }
 
         console.log(newBooking)
 

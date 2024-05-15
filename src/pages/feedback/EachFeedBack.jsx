@@ -2,7 +2,7 @@
 const EachFeedBack = ({ feedback }) => {
     const { name, email, message,rating } = feedback;
     return (
-        <div className="container flex flex-col w-full p-1 md:p-6 mx-auto divide-y rounded-md dark:divide-gray-300 dark:bg-gray-50 dark:text-gray-800 border mb-[30px] shadow-md">
+        <div className="container flex flex-col w-full p-1 md:p-6 mx-auto divide-y rounded-md dark:divide-gray-300 dark:bg-gray-50 dark:text-gray-800 border mb-[30px] shadow-md hover:bg-black hover:bg-opacity-80 hover:text-white">
             <div className="flex justify-between p-4">
                 <div className="flex space-x-4">
                     <div>

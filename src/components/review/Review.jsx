@@ -45,7 +45,7 @@ const Review = () => {
                 </div>
                 <img data-aos="fade-right" src='https://i.postimg.cc/KcknFL67/ggg.jpg' alt="" className="rounded-full w-[600px]" />
             </div>
-            <form onSubmit={handleSubmit} noValidate="" className="space-y-6">
+            <form data-aos="fade-left" onSubmit={handleSubmit} noValidate="" className="space-y-6">
                 <div>
                     <label htmlFor="name" className="font-medium">Full name</label>
                     <input id="name" name="name" defaultValue={user ? user?.displayName : ''} type="text" placeholder="" className=" border w-full p-3 rounded dark:bg-[#7f1734]" />
