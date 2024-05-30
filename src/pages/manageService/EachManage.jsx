@@ -47,7 +47,7 @@ const EachManage = ({ manage, setManage, allManage }) => {
 
 
     return (
-        <div className="flex rounded shadow-md overflow-hidden relative dark:bg-gray-50 dark:text-gray-800 px-2 py-4 md:gap-7 items-center">
+        <div className="flex rounded shadow-md overflow-hidden relative dark:bg-gray-50 dark:text-gray-800 px-2 py-4 md:gap-7 items-center hover:bg-black hover:bg-opacity-80 hover:text-white">
             <div className="self-stretch flex flex-col lg:flex-row items-center px-3 flex-shrink-0 gap-3">
                 <button onClick={() => handleDelete(_id)} className="lg:tooltip" data-tip="Delete">
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" className="h-8 w-8">

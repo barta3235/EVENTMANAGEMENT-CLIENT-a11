@@ -1,10 +1,10 @@
 import { Link, useLoaderData } from "react-router-dom";
-import Banner from "../../components/banner/Banner";
 import HomeService from "../../components/HomeService/HomeService";
 import { Helmet } from "react-helmet-async";
 import Review from "../../components/review/Review";
 import Gallery from "../../components/gallery/Gallery";
 import { BiWorld } from "react-icons/bi";
+import Banner from "../../components/banner/Banner";
 const Home = () => {
 
     const services = useLoaderData()
@@ -17,7 +17,7 @@ const Home = () => {
                 <title>Dreamscape | Home</title>
             </Helmet>
             <Banner></Banner>
-            <div className="text-center mt-[80px] mb-[40px] mx-[10px] text-3xl md:text-5xl font-medium flex items-center gap-1 md:gap-2 justify-center">
+            <div className="text-center mt-[80px] mb-[40px] mx-[10px] text-3xl md:text-5xl font-medium flex items-center md:gap-2 justify-center">
                 <h1>Our events worldwide</h1><BiWorld className="text-[#7f1734] text-7xl"></BiWorld>
             </div>
             <Gallery></Gallery>
@@ -34,7 +34,7 @@ const Home = () => {
             </div>
 
 
-            <div className="mb-[25px] mt-[20px] text-white menu-edits mx-[5px] md:mx-[40px]">
+            <div className="mb-[25px] mt-[20px] bg-fixed text-white menu-edits mx-[5px] md:mx-[40px]">
                 <section className="p-6 dark:bg-gray-100 dark:text-gray-800">
                     <div className="container mx-auto grid justify-center grid-cols-2 text-center lg:grid-cols-3">
                         <div data-aos="zoom-in-up" className="flex flex-col justify-start m-2 lg:m-6 ">

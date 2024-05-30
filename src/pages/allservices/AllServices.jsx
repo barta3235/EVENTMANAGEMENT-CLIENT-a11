@@ -66,7 +66,7 @@ const AllServices = () => {
             </Helmet>
             {
                 loading ? <div className="flex justify-center items-center min-h-screen"><span className="loading loading-bars w-[150px] bg-[#7f1734]"><SiDreamstime></SiDreamstime></span></div> : <div>
-                    <div className="flex justify-start items-center mx-[5px] md:mx-[20px] mb-[30px]">
+                    <div className="flex justify-start items-center mx-[10px] md:mx-[20px] mb-[30px]">
                         <form onSubmit={handleSearch} className="shadow-lg rounded-l-lg" action="">
                             <input name="search" placeholder="Filter By Service Name" className="p-2 outline-none" type="text" />
                             <button> <input type="submit" value="Search" className="p-2 bg-[#7f1734] text-white font-medium rounded-r-md" /></button>

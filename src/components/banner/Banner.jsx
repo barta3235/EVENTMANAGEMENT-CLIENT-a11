@@ -10,7 +10,7 @@ import { EffectCreative } from 'swiper/modules';
 
 const Banner = () => {
     return (
-       <div>
+       <div className='overflow-x-hidden'>
          <Swiper
             grabCursor={true}
             effect={'creative'}

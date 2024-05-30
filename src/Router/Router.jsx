@@ -16,6 +16,7 @@ import BookedServices from "../pages/bookedServices/BookedServices";
 import ErrorPage from "../pages/bookNow/errorPage/ErrorPage";
 import Feedback from "../pages/feedback/Feedback";
 import ServiceTodo from '../pages/serviceTodo/ServiceTodo'
+import Analytics from "../pages/analytics/Analytics";
 
 const router = createBrowserRouter([
   {
@@ -75,6 +76,10 @@ const router = createBrowserRouter([
         {
           path:'/servicesTodo',
           element:<ProtectedRoute><ServiceTodo></ServiceTodo></ProtectedRoute>,
+        },
+        {
+          path:'/analytics',
+          element:<ProtectedRoute><Analytics></Analytics></ProtectedRoute>
         }
     ]
   },

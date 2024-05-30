@@ -15,7 +15,7 @@ const EachBooking = ({ booking }) => {
     const { _id,servicearea, servicename, imageservice, serviceid, price, providername, Provideremail, useremail, username, date, instruction, serviceStatus } = booking;
     
     return (
-        <div className="flex flex-col p-3 md:p-6 space-y-4 sm:p-4 dark:bg-gray-50 dark:text-gray-800 border rounded-md shadow-md">
+        <div className="flex flex-col p-3 md:p-6 space-y-4 sm:p-4 dark:bg-gray-50 dark:text-gray-800 border rounded-md shadow-md hover:bg-black hover:bg-opacity-90 hover:text-white ">
             <ul className="flex flex-col divide-y dark:divide-gray-300">
                 <li className="flex flex-col sm:flex-row sm:justify-between">
                     <div className="flex flex-col md:flex-row w-full md:space-x-4">
