@@ -21,7 +21,7 @@ const Review = () => {
         const rating=form.rating.value;
 
         const newMessage = { name, email, message,rating };
-        axios.post('http://localhost:5000/message', newMessage)
+        axios.post('https://m11-eventmanagement-server.vercel.app/message', newMessage)
             .then(data => {
                 if (data.data.insertedId) {
                     Swal.fire({

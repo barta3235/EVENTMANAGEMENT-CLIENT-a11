@@ -14,7 +14,7 @@ const EachServiceToDo = ({ service, setService }) => {
 
     const handleDecision = (value) => {
           console.log(value);
-          axios.patch(`http://localhost:5000/bookedServices/${_id}`,{value})
+          axios.patch(`https://m11-eventmanagement-server.vercel.app/bookedServices/${_id}`,{value})
           .then(data=>{
             if(data.data.modifiedCount){
                 Swal.fire({

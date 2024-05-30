@@ -27,7 +27,7 @@ const router = createBrowserRouter([
         {
             path:'/',
             element:<Home></Home>,
-            loader:()=> fetch('http://localhost:5000/services')
+            loader:()=> fetch('https://m11-eventmanagement-server.vercel.app/services')
         },
         {
           path:'/login',
@@ -44,12 +44,12 @@ const router = createBrowserRouter([
         {
           path:'/eachService/:id',
           element:<ProtectedRoute><EachHomeService></EachHomeService></ProtectedRoute>,
-          loader:({params})=> fetch(`http://localhost:5000/services/${params.id}`)
+          loader:({params})=> fetch(`https://m11-eventmanagement-server.vercel.app/services/${params.id}`)
         },
         {
           path:'/bookNow/:id',
           element:<ProtectedRoute><BookNow></BookNow></ProtectedRoute>,
-          loader:({params})=> fetch(`http://localhost:5000/services/${params.id}`)
+          loader:({params})=> fetch(`https://m11-eventmanagement-server.vercel.app/services/${params.id}`)
         },
         {
           path: '/allServices',
@@ -62,7 +62,7 @@ const router = createBrowserRouter([
         {
           path:'/updateService/:id',
           element:<UpdateService></UpdateService>,
-          loader:({params})=> fetch(`http://localhost:5000/services/${params.id}`)
+          loader:({params})=> fetch(`https://m11-eventmanagement-server.vercel.app/services/${params.id}`)
         },
         {
           path:'/bookedServices',
@@ -71,7 +71,7 @@ const router = createBrowserRouter([
         {
           path:'/feedback',
           element:<ProtectedRoute><Feedback></Feedback></ProtectedRoute>,
-          loader:()=> fetch('http://localhost:5000/message')
+          loader:()=> fetch('https://m11-eventmanagement-server.vercel.app/message')
         },
         {
           path:'/servicesTodo',

@@ -10,7 +10,7 @@ const ServiceTodo = () => {
     const [bookedDatas, setBookedDatas] = useState([]);
     
     useEffect(() => {
-        axios.get(`http://localhost:5000/bookedServicesByProvider/${user?.email}`)
+        axios.get(`https://m11-eventmanagement-server.vercel.app/bookedServicesByProvider/${user?.email}`)
             .then((data) => {
                 setBookedDatas(data.data)
             })

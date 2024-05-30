@@ -16,7 +16,7 @@ const AllServices = () => {
 
     useEffect(() => {
         setLoading(true);
-        axios.get(`http://localhost:5000/filteredServices?page=${currentPage}&size=${itemsPerPage}&search=${search}`)
+        axios.get(`https://m11-eventmanagement-server.vercel.app/filteredServices?page=${currentPage}&size=${itemsPerPage}&search=${search}`)
             .then(data => {
                 setServices(data.data);
                 setLoading(false);
@@ -25,7 +25,7 @@ const AllServices = () => {
 
 
     useEffect(() => {
-        fetch(`http://localhost:5000/services-count`)
+        fetch(`https://m11-eventmanagement-server.vercel.app/services-count`)
             .then(res => res.json())
             .then(data => {
                 setCount(data.count)

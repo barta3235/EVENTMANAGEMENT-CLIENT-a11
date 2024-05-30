@@ -27,7 +27,7 @@ const EachManage = ({ manage, setManage, allManage }) => {
             confirmButtonText: "Yes, delete it!"
         }).then((result) => {
             if (result.isConfirmed) {
-                axios.delete(`http://localhost:5000/services/${_id}`)
+                axios.delete(`https://m11-eventmanagement-server.vercel.app/services/${_id}`)
                     .then(data => {
                         if (data.data.deletedCount > 0) {
                             Swal.fire({

@@ -12,7 +12,7 @@ const ManageServiceMain = () => {
     const [manageSet, SetManageSet] = useState([])
 
     useEffect(() => {
-        axios.get(`http://localhost:5000/allServices/${user?.email}`)
+        axios.get(`https://m11-eventmanagement-server.vercel.app/allServices/${user?.email}`)
         .then(data=>{
             SetManageSet(data.data)
         })

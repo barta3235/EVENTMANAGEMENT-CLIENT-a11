@@ -13,7 +13,7 @@ const BookedServices = () => {
 
 
     useEffect(() => {
-        axios.get(`http://localhost:5000/bookedServices/${user?.email}`)
+        axios.get(`https://m11-eventmanagement-server.vercel.app/bookedServices/${user?.email}`)
             .then((data) => {
                 SetBookingSet(data.data)
             })

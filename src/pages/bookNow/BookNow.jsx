@@ -33,7 +33,7 @@ const BookNow = () => {
 
         console.log(newBooking)
 
-        axios.post('http://localhost:5000/bookedServices', newBooking)
+        axios.post('https://m11-eventmanagement-server.vercel.app/bookedServices', newBooking)
             .then(data => {
                 if (data.data.insertedId) {
                     Swal.fire({
