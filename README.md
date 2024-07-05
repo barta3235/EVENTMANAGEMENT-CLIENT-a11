@@ -1,6 +1,7 @@
 # Assignment_category_0002
 # Dreamscape
 # Live Link - https://m11-a11-eventmanagement.web.app/
+# Server side - https://github.com/barta3235/EVENTMANAGEMENT-SERVER-a11
 
 # Features - 
 - Users can sign in using their email address and password for secure access.
